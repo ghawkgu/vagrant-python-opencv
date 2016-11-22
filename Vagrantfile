@@ -45,8 +45,8 @@ Vagrant.configure("2") do |config|
   #
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
-    vb.gui = true
-  
+    # vb.gui = true
+
     # Customize the amount of memory on the VM:
     vb.memory = "1024"
   end
@@ -72,7 +72,11 @@ Vagrant.configure("2") do |config|
                        lightdm \
                        terminator \
                        vim-nox \
-                       ubuntu-session
+                       ubuntu-session \
+                       build-essential \
+                       clang \
+                       pkg-config \
+                       libopencv-dev
     echo -en 'vagrant\nvagrant' | passwd ubuntu
 
     echo -en '[SeatDefaults]\nuser-session=openbox\nallow-guest=false' > \
